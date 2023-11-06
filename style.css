@@ -1,0 +1,16 @@
+body {
+  background-image: url("https://unsplash.com/photos/gold-and-black-round-emblem-9pCV2MB65y8");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#search {
+  margin-bottom: 20px;
+}
+
+#info{
+  font-family: Arial, Helvetica, sans-serif;
+
+}
