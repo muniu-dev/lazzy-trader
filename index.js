@@ -13,6 +13,11 @@ function updateResults(crypto) {
                 <p><strong>US Dollars:</strong> $ ${formattedUsdPrice}</p>
                 <p><strong>Kenya Shillings:</strong> KES ${formattedKshPrice} <button id="buyButton">Buy via Mpesa</button></p>
             `;
+            // Add event listener to buyButton
+            document.getElementById('buyButton').addEventListener('click', function() {
+                // Display browser alert
+                alert("Are you sure you want to make this purchase ?");
+            });
         })
         .catch(() => {
             document.getElementById('info').innerHTML = 'Oops! Something went wrong...please try again.';
