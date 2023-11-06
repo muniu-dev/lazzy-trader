@@ -16,6 +16,6 @@ document.getElementById('searchButton').addEventListener('click', function() {
             `;
         })
         .catch(() => {
-            document.getElementById('info').innerHTML = 'Crypto not found.';
+            document.getElementById('info').innerHTML = 'Try again in a minute...';
         });
 });
