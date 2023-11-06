@@ -4,10 +4,10 @@ document.getElementById('searchButton').addEventListener('click', function() {
     fetch('https://api.coingecko.com/api/v3/coins/' + crypto)
         .then(response => response.json())
         .then(data => {
-            var usdPrice = data.market_data.current_price.usd;
-            var kshPrice = usdPrice * 150;
-            var formattedUsdPrice = usdPrice.toLocaleString('en-US');
-            var formattedKshPrice = kshPrice.toLocaleString('en-US');
+            let usdPrice = data.market_data.current_price.usd;
+            let kshPrice = usdPrice * 150;
+            let formattedUsdPrice = usdPrice.toLocaleString('en-US');
+            let formattedKshPrice = kshPrice.toLocaleString('en-US');
             document.getElementById('info').innerHTML = `
             <h2>${data.name}</h2>
             <p><strong>Symbol:</strong> ${data.symbol}</p>
