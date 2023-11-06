@@ -5,10 +5,11 @@ document.getElementById('searchButton').addEventListener('click', function() {
         .then(response => response.json())
         .then(data => {
             document.getElementById('info').innerHTML = `
-                <h2>${data.name}</h2>
-                <p>Symbol: ${data.symbol}</p>
-                <p>Current Price: $${data.market_data.current_price.usd}</p>
-                <p>Current Price: KES ${(data.market_data.current_price.usd)*150}</p>
+            <h2>${data.name}</h2>
+            <p><strong>Symbol:</strong> ${data.symbol}</p>
+            <p><strong>US Dollars:</strong> ${data.market_data.current_price.usd}</p>
+            <p><strong>Kenya Shillings:</strong> ${(data.market_data.current_price.usd)*150}</p>
+                
             `;
         })
         .catch(() => {
