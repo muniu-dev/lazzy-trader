@@ -12,7 +12,7 @@ document.getElementById('searchButton').addEventListener('click', function() {
             <h2>${data.name}</h2>
             <p><strong>Symbol:</strong> ${data.symbol}</p>
             <p><strong>US Dollars:</strong> $ ${formattedUsdPrice}</p>
-            <p><strong>Kenya Shillings:</strong> KES ${formattedKshPrice}</p>
+            <p><strong>Kenya Shillings:</strong> KES ${formattedKshPrice} <button id="buyButton">Buy via Mpesa</button></p>
             `;
         })
         .catch(() => {

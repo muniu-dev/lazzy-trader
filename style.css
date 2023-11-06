@@ -29,3 +29,12 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   
 }
+
+#buyButton {
+  background-color: rgb(68, 78, 68);
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 2px;
+  border-radius: 5px;
+}
