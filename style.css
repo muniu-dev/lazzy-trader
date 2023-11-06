@@ -1,5 +1,5 @@
 body {
-  background-image: url("/assets/bull.jpg");
+  background-image: url("./assets/bull.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
