@@ -33,6 +33,14 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+#favorites {
+  background-color: rgba(230, 238, 234, 0.5);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
 #buyButton {
   background-color: rgb(68, 78, 68);
   color: white;
@@ -57,7 +65,8 @@ body {
     width: 100%;
   }
 
-  #info {
+  #info,
+  #favorites {
     padding: 10px;
   }
 
