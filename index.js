@@ -4,7 +4,7 @@ function updateResults(crypto) {
         .then(response => response.json())
         .then(data => {
             let usdPrice = data.market_data.current_price.usd;
-            let kshPrice = usdPrice * 130;
+            let kshPrice = usdPrice * 150;
             let formattedUsdPrice = usdPrice.toLocaleString('en-US');
             let formattedKshPrice = kshPrice.toLocaleString('en-US');
             document.getElementById('info').innerHTML = `
