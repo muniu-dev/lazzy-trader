@@ -3,19 +3,22 @@
 <head>
     <title>LAzZY Trader</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div id="header">
-        <img src="./assets/trxdr.png" alt="trxdr" width="250" height="250" style="margin-bottom: -50px;">
+        <img src="./assets/trxdr.png" alt="trxdr" class="logo">
         <h1>LAzZY TRXDR</h1>
     </div>
-    <input type="text" id="search" placeholder="Enter crypto here...">
-    <button id="searchButton">GO!</button>
+    <div class="container">
+        <input type="text" id="search" placeholder="Enter crypto here..." class="input-field">
+        <button id="searchButton" class="button">GO!</button>
+    </div>
     <div id="info"></div>
     <div id="favorites">
         <h3>Favorites</h3>
         <ul id="favoritesList"></ul>
     </div>
+    <script src="index.js"></script>
 </body>
-<script src="index.js"></script>
 </html>
