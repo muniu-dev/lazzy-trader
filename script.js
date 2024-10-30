@@ -10,6 +10,18 @@ const popularCryptos = [
     { id: 'ripple', name: 'Ripple', symbol: 'XRP' }
 ];
 
+// Function to fetch KES exchange rate
+async function getKESRate() {
+    try {
+        const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+        const data = await response.json();
+        return data.rates.KES;
+    } catch (error) {
+        console.error('Error fetching KES rate:', error);
+        return 135; // Fallback rate if API fails
+    }
+}
+
 async function createMiniChart(containerId, prices) {
     const ctx = document.getElementById(containerId).getContext('2d');
     
@@ -57,12 +69,14 @@ async function createMiniChart(containerId, prices) {
 async function updateCryptoList() {
     const container = document.getElementById('cryptoRows');
     container.innerHTML = '';
+    const kesRate = await getKESRate();
 
     for (const crypto of popularCryptos) {
         try {
             const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${crypto.id}&vs_currencies=usd&include_24hr_change=true`);
             const data = await response.json();
             const price = data[crypto.id].usd;
+            const kesPrice = price * kesRate;
             const change = data[crypto.id].usd_24h_change;
 
             const row = document.createElement('div');
@@ -81,9 +95,12 @@ async function updateCryptoList() {
                          alt="${crypto.name}" 
                          class="currency-icon"
                          onerror="this.src='https://via.placeholder.com/32'">
-                    <span>${crypto.name}</span>
+                    <span class="currency-name">${crypto.name}</span>
                 </div>
-                <div class="amount">$${price.toLocaleString()}</div>
+                <div class="price-container">
+                    <div class="usd-price">$${price.toLocaleString()}</div>
+                    <div class="kes-price">KES ${kesPrice.toLocaleString()}</div>
+                </div>
                 <div class="change ${change >= 0 ? 'positive' : 'negative'}">
                     ${change >= 0 ? '+' : ''}${change.toFixed(2)}%
                 </div>
@@ -94,7 +111,7 @@ async function updateCryptoList() {
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 5v14M5 12h14"/>
                     </svg>
-                    Add
+                    <span class="button-text">Add</span>
                 </button>
             `;
 
@@ -133,7 +150,9 @@ function updateFavoritesList() {
                          onerror="this.src='https://via.placeholder.com/32'">
                     <span>${crypto.name}</span>
                 </div>
-                <button class="send-button" onclick="removeFromFavorites('${id}')">Remove</button>
+                <button class="send-button" onclick="removeFromFavorites('${id}')">
+                    <span class="button-text">Remove</span>
+                </button>
             `;
             favoritesList.appendChild(item);
         }
@@ -164,4 +183,6 @@ document.getElementById('searchButton').addEventListener('click', function() {
 // Initialize app
 window.addEventListener('load', function() {
     updateCryptoList();
+    // Refresh data every 60 seconds
+    setInterval(updateCryptoList, 60000);
 });
