@@ -4,36 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LAzZY Trader</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-content">
-            <img src="./assets/trxdr.png" alt="trxdr" class="logo">
-            <h1>LAzZY TRXDR</h1>
-        </div>
-    </nav>
     <div class="container">
+        <header>
+            <h1>Live Crypto Rates</h1>
+            <p class="subtitle">Compare cryptocurrencies in real time & find the right moment to trade</p>
+        </header>
+
+        <div class="controls">
+            <div class="toggle-container">
+                <span>Inverse</span>
+                <label class="switch">
+                    <input type="checkbox" id="inverseToggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <button id="editButton" class="edit-button">Edit</button>
+        </div>
+
         <div class="search-container">
-            <input type="text" id="search" placeholder="Enter crypto here..." class="input-field">
-            <button id="searchButton" class="button">GO!</button>
+            <input type="text" id="search" placeholder="Search cryptocurrency..." class="input-field">
+            <button id="searchButton" class="button">Search</button>
         </div>
-        <div id="info"></div>
-        <div id="chart-container">
-            <canvas id="priceChart"></canvas>
+
+        <div class="crypto-list">
+            <div class="list-header">
+                <div class="currency-info">Currency</div>
+                <div class="amount">Amount</div>
+                <div class="change">Change (24h)</div>
+                <div class="chart">Chart (24h)</div>
+                <div class="action">Action</div>
+            </div>
+            <div id="cryptoRows"></div>
         </div>
-        <div id="market-sentiment">
-            <h3>Market Sentiment</h3>
-            <div id="sentiment-indicator"></div>
-        </div>
-        <div id="favorites">
+
+        <div id="favorites" class="favorites-section">
             <h3>Favorites</h3>
-            <ul id="favoritesList"></ul>
+            <div id="favoritesList" class="favorites-list"></div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="index.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
-
-<antArtifact identifier="updated-lazzy-trader-styles" type="application/vnd.ant.code" language="css" title="Enhanced LAzZY Trader Styles">
