@@ -14,12 +14,12 @@ A real-time cryptocurrency trading comparison platform that helps users track an
 - [Performance Features](#performance-features)
 - [Future Features](#future-features)
 
-## 👤 Author Information
+## 👤 Author Information {#author-information}
 
 **Project Name:** LAzZY TRXDR  
 **Author:** Michael Muniu
 
-## 🎯 Problem Statement
+## 🎯 Problem Statement {#problem-statement}
 
 The cryptocurrency market is highly volatile and dynamic, with exchange rates fluctuating significantly within short periods. Traders and investors need access to the latest and most accurate exchange rates from reliable sources to make informed decisions.
 
@@ -33,7 +33,7 @@ However, finding and comparing exchange rates across different cryptocurrencies 
 
 LAzZY TRXDR addresses these challenges by providing a streamlined, user-friendly interface for real-time cryptocurrency price tracking and comparison.
 
-## ✨ Features
+## ✨ Features {#features}
 
 ### Core Features
 
@@ -55,7 +55,7 @@ The app currently tracks the following popular cryptocurrencies:
 - Cardano (ADA)
 - Ripple (XRP)
 
-## 🛠 Technologies Used
+## 🛠 Technologies Used {#technologies-used}
 
 - **HTML5**: Structure and markup
 - **CSS3**: Styling and responsive design
@@ -65,7 +65,7 @@ The app currently tracks the following popular cryptocurrencies:
   - CoinGecko API: Cryptocurrency price data
   - ExchangeRate-API: USD to KES conversion rates
 
-## 🚀 Installation & Setup
+## 🚀 Installation & Setup {#installation--setup}
 
 ### Prerequisites
 
@@ -99,7 +99,7 @@ The app currently tracks the following popular cryptocurrencies:
 
 This is a pure client-side application with no build process, dependencies to install, or configuration needed. Just open the HTML file in a browser!
 
-## 📖 Usage
+## 📖 Usage {#usage}
 
 ### Viewing Cryptocurrency Prices
 
@@ -130,7 +130,7 @@ This is a pure client-side application with no build process, dependencies to in
 - The page updates seamlessly without requiring manual refresh
 - Loading indicators show during data updates
 
-## 🔌 API Dependencies
+## 🔌 API Dependencies {#api-dependencies}
 
 ### CoinGecko API
 - **Endpoint**: `https://api.coingecko.com/api/v3/simple/price`
@@ -142,7 +142,7 @@ This is a pure client-side application with no build process, dependencies to in
 - **Purpose**: Provides USD to KES (Kenyan Shillings) conversion rates
 - **Caching**: Exchange rates are cached for 5 minutes to reduce API calls
 
-## ⚡ Performance Features
+## ⚡ Performance Features {#performance-features}
 
 The application includes several performance optimizations:
 
@@ -174,7 +174,7 @@ The application includes several performance optimizations:
 - Shows error states instead of hiding failed cryptocurrencies
 - All cryptocurrencies appear even if some API calls fail
 
-## 🔮 Future Features
+## 🔮 Future Features {#future-features}
 
 - **Compare Functionality**: Side-by-side comparison of multiple cryptocurrencies
 - **Historical Data**: View price history over different time periods
