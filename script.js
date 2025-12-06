@@ -179,12 +179,17 @@ function createCryptoRow(crypto, data, kesRate, error = null) {
                     Error
                 </div>
             </div>
-            <button class="send-button" onclick="addToFavorites('${crypto.id}', '${crypto.name}')">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M5 12h14"/>
-                </svg>
-                <span class="button-text">Add</span>
-            </button>
+            <div class="action-buttons">
+                <button class="send-button" onclick="addToFavorites('${crypto.id}', '${crypto.name}')">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12h14"/>
+                    </svg>
+                    <span class="button-text">Add</span>
+                </button>
+                <button class="send-button compare-button" onclick="compareCrypto('${crypto.id}', '${crypto.name}')">
+                    <span class="button-text">Compare</span>
+                </button>
+            </div>
         `;
         return row;
     }
@@ -218,12 +223,17 @@ function createCryptoRow(crypto, data, kesRate, error = null) {
         <div class="chart-container">
             <canvas id="${chartId}"></canvas>
         </div>
-        <button class="send-button" onclick="addToFavorites('${crypto.id}', '${crypto.name}')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 5v14M5 12h14"/>
-            </svg>
-            <span class="button-text">Add</span>
-        </button>
+        <div class="action-buttons">
+            <button class="send-button" onclick="addToFavorites('${crypto.id}', '${crypto.name}')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12h14"/>
+                </svg>
+                <span class="button-text">Add</span>
+            </button>
+            <button class="send-button compare-button" onclick="compareCrypto('${crypto.id}', '${crypto.name}')">
+                <span class="button-text">Compare</span>
+            </button>
+        </div>
     `;
     
     // Create chart after a brief delay to ensure DOM is ready
@@ -261,12 +271,17 @@ function showLoadingState() {
                     <div style="width: 20px; height: 20px; border: 2px solid #2196F3; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
                 </div>
             </div>
-            <button class="send-button" disabled style="opacity: 0.5;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 5v14M5 12h14"/>
-                </svg>
-                <span class="button-text">Add</span>
-            </button>
+            <div class="action-buttons">
+                <button class="send-button" disabled style="opacity: 0.5;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12h14"/>
+                    </svg>
+                    <span class="button-text">Add</span>
+                </button>
+                <button class="send-button compare-button" disabled style="opacity: 0.5;">
+                    <span class="button-text">Compare</span>
+                </button>
+            </div>
         `;
         container.appendChild(row);
     });
@@ -343,6 +358,11 @@ function addToFavorites(id, name) {
 
     favorites.add(id);
     updateFavoritesList();
+}
+
+function compareCrypto(id, name) {
+    // Placeholder function - does nothing for now
+    // TODO: Implement compare functionality
 }
 
 function updateFavoritesList() {
