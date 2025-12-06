@@ -195,7 +195,7 @@ Contributions, issues, and feature requests are welcome!
 
 ## 📧 Contact
 
-For questions or support, please contact Michael Muniu.
+For questions or support, please contact Michael Muniu at mikemuniu.ke@gmail.com
 
 ---
 
